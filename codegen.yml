@@ -1,0 +1,12 @@
+overwrite: true
+schema:
+  - https://beta.pokeapi.co/graphql/v1beta:
+      headers:
+        Content-Type: "application/json"
+documents: "src/app/graphql/**/*.graphql"
+generates:
+  src/app/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"

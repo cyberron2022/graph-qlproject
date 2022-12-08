@@ -92,10 +92,13 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3465f54a-0677-492d-a739-3ee4ec8d05b3"
   }
 }

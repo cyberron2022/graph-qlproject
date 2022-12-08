@@ -1,0 +1,31 @@
+fragment Pokemons on pokemon_v2_pokemon {
+  id
+  name
+  order
+  pokemon_species_id
+  base_experience
+  height
+  weight
+}
+
+fragment PokemonsSprite on pokemon_v2_pokemonsprites {
+  id
+  pokemon_id
+  sprites
+}
+
+query pokemonsList {
+  pokemon_v2_pokemon(limit: 10) {
+    id
+    name
+    order
+    base_experience
+    height
+    weight
+    pokemon_v2_pokemonsprites {
+      id
+      pokemon_id
+      sprites
+    }
+  }
+}

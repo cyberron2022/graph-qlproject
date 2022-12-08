@@ -1,0 +1,18 @@
+.td_id {
+    width: 50px;
+}
+.td_name {
+    width: 250px;
+}
+.td_height {
+    width: 120px;
+}
+.td_weight {
+    width: 120px;
+}
+.td_image {
+    width: 120px;
+}
+.td_action {
+    width: 100px;
+}

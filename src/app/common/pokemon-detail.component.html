@@ -1,0 +1,160 @@
+
+
+<div *ngIf="!(spinner$ | async) && (vm$ | async) as vm">
+  <div class="form-group row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold">ID:</label>
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="pokemonid"
+            value="{{vm.details?.id}}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Name:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="pokemon_name"
+            value="{{ vm.details?.name | uppercase }}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Base Experience:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="base_exp"
+            value="{{ vm.details?.base_experience }}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Base Happiness:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="base_happiness"
+            value="{{ vm.details?.base_happiness }}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Capture Rate:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="capture_rate"
+            value="{{ vm.details?.capture_rate }}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Height:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="height"
+            value="{{ vm.details?.height }}"
+          />
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Weight:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            readonly
+            class="form-control-plaintext form-control-sm"
+            id="weight"
+            value="{{ vm.details?.weight }}"
+          />
+        </div>
+        
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Ability:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <ng-container
+            *ngFor="let ability of vm.details?.pokemon_v2_pokemonabilities"
+          >
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext form-control-sm"
+              id="ability"
+              value="{{ ability.pokemon_v2_ability.name }}"
+            />
+          </ng-container>
+        </div>
+        <div class="col-md-6">
+          <label class="col-form-label col-form-label-sm font-weight-bold"
+            >Types:</label
+          >
+        </div>
+        <div class="col-md-6">
+          <ng-container
+            *ngFor="let ability of vm.details?.pokemon_v2_pokemontypes"
+          >
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext form-control-sm"
+              id="types"
+              value="{{ ability.pokemon_v2_type.name }}"
+            />
+          </ng-container>
+        </div>
+       
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-4">
+          <img height="140" class="bg-warning" src="{{ vm.details?.sprites }}" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> 
+
+<div *ngIf="spinner$ | async">
+  <div class="text-center">
+    <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
